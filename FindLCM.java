@@ -8,10 +8,19 @@ public class FindLCM {
 		Scanner scan=new Scanner(System.in);
 		int x=scan.nextInt();
 		int y=scan.nextInt();
-		System.out.println(lcm(x,y));
+		int lcm;
+//		1st method)
 		
+		for(lcm=x>y?x:y;lcm<=(x*y);lcm=lcm+(x>y?x:y))
+		{
+			if(lcm%x==0 && lcm%y==0)
+			break;
+		}
+		System.out.printf("Lcm of %d and %d is %d",x,y,lcm);
+		System.out.println(lcm(x,y));
 		scan.close();
 }
+//	2nd method)
 	static int gcd(int x,int y) {
 		if(y==0) {return x;}
 		return gcd(y,x%y);
